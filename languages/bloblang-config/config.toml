@@ -1,4 +1,4 @@
-name = "Benthos"
+name = "Bloblang Config"
 grammar = "yaml"
 path_suffixes = ["benthos.yaml", "benthos.yml", "connect.yaml", "connect.yml"]
 line_comments = ["# "]

@@ -1,9 +1,13 @@
-# zed-benthos
+# zed-bloblang
 
-Syntax highlighting for [Benthos / Redpanda Connect](https://www.benthos.dev/) and
-the [Bloblang](https://www.benthos.dev/docs/guides/bloblang/about) language in the
+Syntax highlighting for the [Bloblang](https://www.benthos.dev/docs/guides/bloblang/about)
+language — and for embedded Bloblang inside
+[Benthos / Redpanda Connect](https://www.benthos.dev/) YAML configs — in the
 [Zed](https://zed.dev) editor. This is a port of the
 [`vscode-benthos`](https://github.com/benthosdev/vscode-benthos) extension.
+
+> Unofficial — not affiliated with or endorsed by Redpanda Data. "Redpanda Connect" and
+> "Benthos" are names of their respective projects.
 
 ## Features
 
@@ -26,16 +30,17 @@ pipeline:
 
 ## File associations
 
-The `Benthos` language is applied automatically to files ending in `benthos.yaml`,
+The `Bloblang Config` language is applied automatically to files ending in `benthos.yaml`,
 `benthos.yml`, `connect.yaml`, or `connect.yml` (so `benthos.yaml`, `my.benthos.yaml`,
 `connect.yaml`, etc.).
 
-To treat other YAML files as Benthos configs, add them to your Zed `settings.json`:
+To treat other YAML files as Benthos / Redpanda Connect configs, add them to your Zed
+`settings.json`:
 
 ```json
 {
   "file_types": {
-    "Benthos": ["**/config/*.yaml", "pipeline.yaml"]
+    "Bloblang Config": ["**/config/*.yaml", "pipeline.yaml"]
   }
 }
 ```
