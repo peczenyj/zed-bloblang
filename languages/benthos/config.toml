@@ -1,5 +1,5 @@
 name = "Benthos"
-grammar = "benthos_yaml"
+grammar = "yaml"
 path_suffixes = ["benthos.yaml", "benthos.yml", "connect.yaml", "connect.yml"]
 line_comments = ["# "]
 tab_size = 2

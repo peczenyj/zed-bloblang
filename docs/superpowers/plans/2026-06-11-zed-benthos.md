@@ -69,7 +69,7 @@ repository = "https://github.com/tpeczenyj/zed-benthos"
 repository = "https://github.com/EmilLaursen/tree-sitter-bloblang"
 rev = "5b34098ec446caadcec0bf667bade2b8551ecb21"
 
-[grammars.benthos_yaml]
+[grammars.yaml]
 repository = "https://github.com/tree-sitter-grammars/tree-sitter-yaml"
 rev = "a1c4812a73ec5e089de8e441fdea3a921e8d5079"
 ```
@@ -264,7 +264,7 @@ git commit -m "Add Bloblang language for .blobl files"
 
 ```toml
 name = "Benthos"
-grammar = "benthos_yaml"
+grammar = "yaml"
 path_suffixes = ["benthos.yaml", "benthos.yml", "connect.yaml", "connect.yml"]
 line_comments = ["# "]
 tab_size = 2
@@ -615,4 +615,4 @@ git commit -m "Fix #!blobl injection regex to match block_scalar node text"
 
 **Placeholder scan:** README skeleton in Task 1 is explicitly replaced in Task 6; no other placeholders. Every file step contains complete content.
 
-**Type/name consistency:** grammar ids `bloblang` and `benthos_yaml` are used identically in `extension.toml` (Task 1) and the two `config.toml` files (Tasks 2, 3). Language names `Bloblang`/`Benthos` consistent across config and README.
+**Type/name consistency:** grammar ids `bloblang` and `yaml` are used identically in `extension.toml` (Task 1) and the two `config.toml` files (Tasks 2, 3). Language names `Bloblang`/`Benthos` consistent across config and README.

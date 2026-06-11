@@ -56,9 +56,15 @@ zed-benthos/
 | Grammar id | Repository | Pinned rev |
 |---|---|---|
 | `bloblang` | `https://github.com/EmilLaursen/tree-sitter-bloblang` | `5b34098ec446caadcec0bf667bade2b8551ecb21` |
-| `benthos_yaml` | `https://github.com/tree-sitter-grammars/tree-sitter-yaml` | `a1c4812a73ec5e089de8e441fdea3a921e8d5079` |
+| `yaml` | `https://github.com/tree-sitter-grammars/tree-sitter-yaml` | `a1c4812a73ec5e089de8e441fdea3a921e8d5079` |
 
 (Revs are current HEADs as of 2026-06-11; verified via `git ls-remote`.)
+
+> **Constraint (learned the hard way):** the grammar id MUST equal the grammar's own
+> name — i.e. the symbol the parser exports as `tree_sitter_<name>`. Zed links each
+> grammar's WASM with `--export tree_sitter_<grammar-id>`. The YAML parser exports
+> `tree_sitter_yaml`, so the id must be `yaml` (not `benthos_yaml`); an id mismatch
+> produces `wasm-ld: error: symbol exported via --export not found` at install time.
 
 ### Language 1 — Bloblang
 
@@ -78,7 +84,7 @@ is expected to be light (drop/rename anything Zed does not recognize).
 ### Language 2 — Benthos
 
 `languages/benthos/config.toml`:
-- `name = "Benthos"`, `grammar = "benthos_yaml"`
+- `name = "Benthos"`, `grammar = "yaml"`
 - claims Benthos config filenames by default so highlighting is automatic for common cases
   without hijacking plain YAML. Default associations: `benthos.yaml`, `connect.yaml`, and
   the suffix `*.benthos.yaml`. Users associate additional files via Zed's `file_types`
