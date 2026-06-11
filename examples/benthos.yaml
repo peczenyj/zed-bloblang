@@ -1,0 +1,19 @@
+pipeline:
+  processors:
+    - mapping: |
+        #!blobl
+        root.name = this.
+          (fullName | nickName).
+          not_empty().
+          catch(err -> "failed to get pet name: %s".format(err))
+
+        root.sound = if this.type == "cat" {
+          this.cat.meow
+        } else if this.type == "dog" {
+          this.dog.woof.uppercase()
+        } else {
+          "sweet sweet silence"
+        }
+    - log:
+        level: ${LOG_LEVEL:INFO}
+        message: '${! this.name } sounds like ${! this.sound.or("nothing") }'

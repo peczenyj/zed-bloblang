@@ -1,0 +1,19 @@
+# Example Bloblang mapping
+map process_pet {
+  root.name = this.
+    (fullName | nickName).
+    not_empty().
+    catch(err -> "failed to get pet name: %s".format(err))
+
+  root.sound = if this.type == "cat" {
+    this.cat.meow
+  } else if this.type == "dog" {
+    this.dog.woof.uppercase()
+  } else {
+    "sweet sweet silence"
+  }
+}
+
+let count = 1 + 2
+root = this.apply("process_pet")
+root.meta_value = meta("example")
