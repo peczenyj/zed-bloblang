@@ -492,8 +492,8 @@ git commit -m "Add example fixtures for manual verification"
 ````markdown
 # zed-benthos
 
-Syntax highlighting for [Benthos / Redpanda Connect](https://www.benthos.dev/) and
-the [Bloblang](https://www.benthos.dev/docs/guides/bloblang/about) language in the
+Syntax highlighting for [Benthos / Redpanda Connect](https://docs.redpanda.com/connect/components/about) and
+the [Bloblang](https://docs.redpanda.com/connect/guides/bloblang/about/) language in the
 [Zed](https://zed.dev) editor. This is a port of the
 [`vscode-benthos`](https://github.com/benthosdev/vscode-benthos) extension.
 

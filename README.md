@@ -1,8 +1,8 @@
 # zed-bloblang
 
-Syntax highlighting for the [Bloblang](https://www.benthos.dev/docs/guides/bloblang/about)
+Syntax highlighting for the [Bloblang](https://docs.redpanda.com/connect/guides/bloblang/about/)
 language — and for embedded Bloblang inside
-[Benthos / Redpanda Connect](https://www.benthos.dev/) YAML configs — in the
+[Benthos / Redpanda Connect](https://docs.redpanda.com/connect/components/about) YAML configs — in the
 [Zed](https://zed.dev) editor. This is a port of the
 [`vscode-benthos`](https://github.com/benthosdev/vscode-benthos) extension.
 
