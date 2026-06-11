@@ -1,6 +1,12 @@
-# zed-benthos — Design
+# zed-bloblang — Design
 
 Date: 2026-06-11
+
+> Note: the extension was renamed from "Benthos" to **Bloblang** after the initial
+> design. Current names: extension id `bloblang`, the embedded-YAML language is
+> **"Bloblang Config"**, and its files live in `languages/bloblang-config/`. References
+> below to the `vscode-benthos` source repo, the `benthos.yaml`/`connect.yaml` filenames,
+> and the Benthos / Redpanda Connect product are intentionally unchanged.
 
 ## Goal
 
@@ -25,8 +31,8 @@ Tree-sitter grammars plus `.scm` query files. Two consequences:
   [`EmilLaursen/tree-sitter-bloblang`](https://github.com/EmilLaursen/tree-sitter-bloblang).
   We reuse it, pinned to a commit (we do not control it; pin protects us from breakage).
 - A third-party extension cannot cleanly augment the **built-in** YAML language's
-  injection queries. So the YAML feature is delivered as a **separate `Benthos` language**
-  that pairs a YAML grammar with our own injection queries, applied only to Benthos config
+  injection queries. So the YAML feature is delivered as a **separate `Bloblang Config`
+  language** that pairs a YAML grammar with our own injection queries, applied only to Benthos config
   files (not all `.yaml`).
 
 ## Architecture
@@ -34,13 +40,13 @@ Tree-sitter grammars plus `.scm` query files. Two consequences:
 A standard Zed language extension:
 
 ```
-zed-benthos/
+zed-bloblang/
   extension.toml                 # manifest: 2 grammars, 2 languages
   languages/
     bloblang/
       config.toml                # .blobl files
       highlights.scm             # adapted from EmilLaursen's queries
-    benthos/
+    bloblang-config/
       config.toml                # benthos.yaml, connect.yaml, *.benthos.yaml
       highlights.scm             # YAML highlighting
       injections.scm             # inject bloblang into YAML
@@ -81,10 +87,10 @@ standard Tree-sitter names that Zed supports directly: `@keyword`, `@operator`,
 `@punctuation.bracket`, `@string`, `@number`, `@constant.builtin`, `@comment`. Adaptation
 is expected to be light (drop/rename anything Zed does not recognize).
 
-### Language 2 — Benthos
+### Language 2 — Bloblang Config
 
-`languages/benthos/config.toml`:
-- `name = "Benthos"`, `grammar = "yaml"`
+`languages/bloblang-config/config.toml`:
+- `name = "Bloblang Config"`, `grammar = "yaml"`
 - claims Benthos config filenames by default so highlighting is automatic for common cases
   without hijacking plain YAML. Default associations: `benthos.yaml`, `connect.yaml`, and
   the suffix `*.benthos.yaml`. Users associate additional files via Zed's `file_types`

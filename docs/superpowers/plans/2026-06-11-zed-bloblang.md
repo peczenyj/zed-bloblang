@@ -1,6 +1,12 @@
-# zed-benthos Implementation Plan
+# zed-bloblang Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+> **Historical note:** this plan was executed as written, then the extension was renamed.
+> Map the old names to current ones when reading the steps below:
+> `id = "benthos"` → `id = "bloblang"`; the `Benthos` language → **`Bloblang Config`**;
+> `languages/benthos/` → `languages/bloblang-config/`; repo `zed-benthos` → `zed-bloblang`.
+> The `vscode-benthos` source repo and the `benthos.yaml`/`connect.yaml` filenames are unchanged.
 
 **Goal:** Build a Zed extension that provides syntax highlighting for Bloblang `.blobl` files and for Bloblang `#!blobl` mapping blocks embedded in Benthos/Redpanda Connect YAML configs.
 
