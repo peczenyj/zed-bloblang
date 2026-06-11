@@ -1,0 +1,15 @@
+id = "benthos"
+name = "Benthos"
+description = "Syntax highlighting for Benthos / Redpanda Connect and the Bloblang language."
+version = "0.1.0"
+schema_version = 1
+authors = ["Tiago Peczenyj <tpeczenyj@weborama.com>"]
+repository = "https://github.com/tpeczenyj/zed-benthos"
+
+[grammars.bloblang]
+repository = "https://github.com/EmilLaursen/tree-sitter-bloblang"
+rev = "5b34098ec446caadcec0bf667bade2b8551ecb21"
+
+[grammars.benthos_yaml]
+repository = "https://github.com/tree-sitter-grammars/tree-sitter-yaml"
+rev = "a1c4812a73ec5e089de8e441fdea3a921e8d5079"
